@@ -1,14 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frontend with Fetch</title>
 </head>
 <body>
-    <video controls>
-        <source src="https://firebasestorage.googleapis.com/v0/b/imoveis-2034d-i1j33/o/videoplayback.mp4?alt=media&token=8f899dc8-8a51-45e4-b160-0f2aeb5e789a">
-    </video>    
+  <h1>Frontend Fetch Example</h1>
+  <button id="fetch-button">Fetch Data</button>
+  <script>
+    document.getElementById('fetch-button').addEventListener('click', () => {
+      fetch('http://192.168.5.46:3030/')
+        .then(response => response.text())
+        .then(data => {
+          console.log(data);
+          alert(data);
+        })
+        .catch(error => console.error('Error:', error));
+    });
+  </script>
 </body>
 </html>
-
