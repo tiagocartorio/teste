@@ -9,7 +9,7 @@
 
     "routes": [
         { "src": "/", "dest": "/frontend/index.html" },
-        { "src": "/sobre", "dest": "/backend/server.js" }
+        { "src": "/(.*)", "dest": "/backend/server.js" }
     ],
 
     "env": {
