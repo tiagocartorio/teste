@@ -3,50 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://fastserver.vercel.app/index.css">
+    <title>MyZap Login</title>
+    <link rel="stylesheet" href="http://localhost:3000/index.css">
 </head>
 <body>
-    <h1 id="um">index</h1>
-    <a id="dois" href="/sobre"><button id="tres">Teste</button></a>
-    <br>   
-    <button id="loginBtn">Login</button>
-    <button id="registerBtn">Register</button>
-    
-    <!-- Login Modal -->
-    <div id="loginModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Login</h2>
-            <form method="post" action="/login">
-                <label for="Email">email:</label>
-                <input type="email" id="Email" name="Email"><br><br>
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password"><br><br>
-                <button type="submit">Submit</button>
-            </form>
-        </div>
+
+    <!-- Container de Login -->
+    <div class="titulo">
+        <h4>Simplificando o mundo através <br> da tecnologia</h4>
     </div>
-    
-    <!-- Register Modal -->
-    <div id="registerModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Register</h2>
-            <form method="post" action="/register">
-                <label for="regUsername">Username:</label>
-                <input type="text" id="regUsername" name="username"><br><br>
-                <label for="regPassword">Password:</label>
-                <input type="password" id="regPassword" name="password"><br><br>
-                <label for="regEmail">Email:</label>
-                <input type="email" id="regEmail" name="email"><br><br>
-                <button type="submit">Submit</button>
-            </form>
-        </div>
+
+    <div id="login-container">
+        <form id="login-form" method="post" action="/chat">
+            <h3>MyZap</h3>
+            <label id="texto" for="username">Nome de Usuário:</label>
+            <input type="text" id="username" name="username" required>
+            <label id="textosenha" for="senha">Senha:</label>
+            <input type="password" id="senha" name="senha" required>
+            <button id="loga" type="submit">Entrar</button>
+        </form>
     </div>
-    
-    <script src="https://fastserver.vercel.app/index.js"></script>
+    <script type="module" src="http://localhost:3000/index.js"></script>    
 </body>
 </html>
-
-
