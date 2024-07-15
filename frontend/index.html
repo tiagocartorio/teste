@@ -8,6 +8,25 @@
 </head>
 <body>
     <h1>index</h1>
-    <a href="/sobre"><button>teste</button></a>
+    <a href="/sobre"><button>Teste</button></a>
+    <br>
+    <button id="loginBtn">Login</button>
+
+    <!-- Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Login</h2>
+            <form>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username"><br><br>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password"><br><br>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://fastserver.vercel.app/index.js"></script>
 </body>
 </html>
