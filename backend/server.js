@@ -25,6 +25,14 @@ app.get('/:id', async (req, res) => {
     res.render('erro', { url: req.url })
   }
 })
+app.get('/teste', (req, res) => {
+  const {username, password} = req.body
+  if(username === password){
+    res.send("Parabéns")
+  }else{
+    res.send("Erro, senhas incorretas")
+  }
+})
 app.listen(PORT, () => {
   console.log(`Servidor está rodando em http://localhost:${PORT}`)
 });
