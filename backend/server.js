@@ -7,6 +7,8 @@ const app = express()
 app.use(compression())
 app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, '../views'))
+app.use(express.json()); // Middleware para parsear JSON
+app.use(express.urlencoded({ extended: true })); // Middleware para parsear URL-encoded
 const obterDadosPorId = async (id) => {
   try {
     const res = await sql`SELECT * FROM dados WHERE id = ${id}`;
@@ -25,7 +27,7 @@ app.get('/:id', async (req, res) => {
     res.render('erro', { url: req.url })
   }
 })
-app.get('/teste', (req, res) => {
+app.post('/teste', (req, res) => {
   const {username, password} = req.body
   if(username === password){
     res.send("Parabéns")
