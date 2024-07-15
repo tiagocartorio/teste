@@ -1,4 +1,3 @@
-// Importando módulos usando a sintaxe do ECMAScript
 const express = require('express')
 const path = require('path')
 const compression = require('compression')
@@ -10,23 +9,21 @@ app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, '../views'))
 const obterDadosPorId = async (id) => {
   try {
-    const res = await sql`
-      SELECT * FROM dados WHERE id = ${id}
-    `
+    const res = await sql`SELECT * FROM dados WHERE id = ${id}`;
     return res[0];
   } catch (err) {
-    return null
+    return null;
   }
-};
+}
 app.get('/:id', async (req, res) => {
   const id = req.params.id
   const pagina = await obterDadosPorId(id)
   if (pagina) {
     res.render('home', { pagina })
   } else {
-    res.render('erro', {url: req.url})
+    res.render('erro', { url: req.url })
   }
 })
 app.listen(PORT, () => {
   console.log(`Servidor está rodando em http://localhost:${PORT}`)
-})
+});
