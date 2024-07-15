@@ -15,7 +15,6 @@ const obterDadosPorId = async (id) => {
     `
     return res[0];
   } catch (err) {
-    console.error('Erro ao obter dados:', err)
     return null
   }
 };
@@ -25,7 +24,7 @@ app.get('/:id', async (req, res) => {
   if (pagina) {
     res.render('home', { pagina })
   } else {
-    res.status(404).render('home', { pagina: { titulo: 'Página não encontrada', conteudo: 'Página não encontrada' } })
+    res.render('erro', {url: req.url})
   }
 })
 app.listen(PORT, () => {
