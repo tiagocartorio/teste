@@ -14,6 +14,11 @@
 
     "env": {
         "PORT": "3333",
-        "NODE_ENV": "production npm start"
+        "NODE_ENV": "production npm start",
+        "PGHOST":"ep-patient-mouse-a4b8nvrn.us-east-1.aws.neon.tech",
+        "PGDATABASE":"teste",
+        "PGUSER":"teste_owner",
+        "PGPASSWORD":"jltQFeAc6d1f",
+        "ENDPOINT_ID":"ep-patient-mouse-a4b8nvrn"
     }
 }
