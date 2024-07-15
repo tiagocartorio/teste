@@ -15,7 +15,7 @@ const obterDadosPorId = async (id) => {
     return null;
   }
 }
-app.use('/static',express.static(path.join(__dirname, '../public')));
+app.use(express.static(path.join(__dirname, '../public')));
 app.get('/:id', async (req, res) => {
   const id = req.params.id
   const pagina = await obterDadosPorId(id)
