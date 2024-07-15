@@ -1,9 +1,7 @@
 const postgres = require('postgres');
 require('dotenv').config();
-
 let { PGHOST, PGDATABASE, PGUSER, PGPASSWORD, ENDPOINT_ID } = process.env;
-PGPASSWORD = decodeURIComponent(PGPASSWORD);
-
+PGPASSWORD = decodeURIComponent(PGPASSWORD)
 const sql = postgres({
   host: PGHOST,
   database: PGDATABASE,
@@ -12,8 +10,7 @@ const sql = postgres({
   port: 5432,
   ssl: { rejectUnauthorized: false },
   options: `project=${ENDPOINT_ID}`,
-});
-
+})
 async function getPgVersion() {
   try {
     const result = await sql`SELECT version()`;
@@ -22,7 +19,5 @@ async function getPgVersion() {
     console.error("Erro ao conectar ao banco de dados:", err);
   }
 }
-
 getPgVersion();
-
 module.exports = sql;
