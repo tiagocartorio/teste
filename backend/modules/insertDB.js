@@ -10,6 +10,12 @@ const criarTabelaSeNaoExistir = async () => {
         conteudo VARCHAR(100) NOT NULL
       );
     `;
+
+    // Criar o índice após a criação da tabela
+    await sql`
+      CREATE INDEX idx_id ON dados (id);
+    `;
+
     console.log('Tabela "dados" verificada/criada com sucesso.');
   } catch (err) {
     console.error('Erro ao criar/verificar tabela:', err);

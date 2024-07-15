@@ -1,8 +1,8 @@
 const inserirDados = require('./insertDB.js');
 
 const novoDado = {
-  titulo: 'Página 3',
-  conteudo: 'Conteúdo da página 3',
+  titulo: 'Página 4',
+  conteudo: 'Conteúdo da página 4',
 };
 
 inserirDados(novoDado);
