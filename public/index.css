@@ -104,6 +104,17 @@
             background-color: #d10000;
         }
   
+        #register{
+            color: red;
+            border: 1px solid red;
+            border-radius: 3px;
+            background-color: transparent;
+        }
+        #register:hover{
+            color: rgb(255, 255, 255);
+            border: 1px solid rgb(255, 255, 255);
+            background-color: rgb(216, 0, 0);
+        }
         /* Responsividade */
         @media (max-width: 1100px) {
   
