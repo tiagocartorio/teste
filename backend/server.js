@@ -35,6 +35,9 @@ app.post('/teste', (req, res) => {
     res.send("Erro, senhas incorretas")
   }
 })
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '../frontend/','index.html'))
+})
 app.listen(PORT, () => {
   console.log(`Servidor está rodando em http://localhost:${PORT}`)
 });
